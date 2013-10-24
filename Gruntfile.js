@@ -30,8 +30,11 @@ module.exports = function(grunt){
     alias('css:debug', 'clean:css stylus:all csslint');
     alias('css:release', 'clean:css stylus:all cssmin:release rev:css');
 
-    alias('js:debug', 'clean:js copy:js_sources copy:js_bower_debug jshint');
-    alias('js:release', 'clean:js copy:js_sources uglify:js clean:after_uglify copy:js_bower_release rev:js');
+    alias('ng:debug', 'jade:debug_templates ngtemplates copy:js_templates');
+    alias('ng:release', 'jade:release_templates ngtemplates copy:js_templates');
+
+    alias('js:debug', 'clean:js ng:debug copy:js_sources copy:js_bower_debug jshint');
+    alias('js:release', 'clean:js ng:release copy:js_sources uglify:js clean:after_uglify copy:js_bower_release rev:js');
 
     alias('views:debug', 'clean:views jade:debug');
     alias('views:release', 'clean:views jade:release');

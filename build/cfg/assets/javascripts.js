@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var util = require('util');
 var path = require('path');
 var asset = require('./util/asset.js');
 
@@ -24,6 +25,16 @@ module.exports = {
             }
         };
     },
+    ng: function (module) {
+        return {
+            cwd: 'bin/.tmp/angular/templates',
+            src: '**/*.html',
+            dest: util.format('bin/.tmp/ng/%s_templates.js', module),
+            options: {
+                module: module
+            }
+        };
+    },
     copy: {
         js_bower_debug: bower(false),
         js_bower_release: bower(true),
@@ -32,6 +43,12 @@ module.exports = {
             cwd: 'src/client/js',
             src: ['**/*.js'],
             dest: 'bin/public/js'
+        },
+        js_templates: {
+            expand: true,
+            cwd: 'bin/.tmp/',
+            src: 'ng/**/*_templates.js',
+            dest: 'bin/public/js/'
         }
     },
     files: function(){

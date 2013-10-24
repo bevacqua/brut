@@ -34,11 +34,24 @@ module.exports = {
         }
     },
     jade: {
+        debug_templates: assets.jade({
+            src: 'src/client/templates',
+            dest: 'bin/.tmp/angular/templates',
+            release: false
+        }),
+        release_templates: assets.jade({
+            src: 'src/client/templates',
+            dest: 'bin/.tmp/angular/templates',
+            release: true
+        }),
         debug: assets.jade(false),
         release: assets.jade(true)
     },
     copy: _.assign(assets.img.copy, assets.js.copy, assets.other.copy),
     sprite: {
         icons: assets.img.sprite('icons', 'ic')
+    },
+    ngtemplates: {
+        app: assets.js.ng('brut')
     }
 };

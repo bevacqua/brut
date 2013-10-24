@@ -10,5 +10,7 @@
     m.parentNode.insertBefore(a, m)
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-ga('create', TRACKING_CODE, DOMAIN);
+console.log('ga tracking code and domain unset');
+
+ga('create', '{{TRACKING_CODE}}', '{{DOMAIN}}');
 ga('send', 'pageview');
