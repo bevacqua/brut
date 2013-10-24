@@ -1,20 +1,21 @@
-article.lv-article
-    header.lv-header
-        p {{data.heading}}
+article.lv-container
+    section.lv-article
+        header.lv-header
+            p {{data.heading}}
 
-    figure.lv-figure
-        img.lv-image(ng-src='{{data.figure}}', alt='')
-        figcaption.lv-caption {{data.caption}}
+        figure.lv-figure
+            img.lv-image(ng-src='{{data.figure}}', alt='')
+            figcaption.lv-caption {{data.caption}}
 
-    div.lv-actions
-        span.ic-upvote(ng-click='vote(true)')
+        footer.lv-sharing
+            span.uv-icon.lv-share.sh-facebook(ng-click='share("facebook")', title='Compartí esto en Facebook')
+            span.uv-icon.lv-share.sh-twitter(ng-click='share("twitter")', title='Compartí esto en Twitter')
+            span.uv-icon.lv-share.sh-google-plus(ng-click='share("google-plus")', title='Compartí esto en Google Plus')
+            span.uv-icon.lv-share.sh-email(ng-click='share("email")', title='Compartí esto por mail')
+
+    section.lv-actions
+        span.ac-upvote(ng-click='vote(true)')
         span {{data.tally.votes}}
-        span.ic-downvote(ng-click='vote(false)')
-        span.ic-comment(ng-click='comment()')
+        span.ac-downvote(ng-click='vote(false)')
+        span.ac-comment(ng-click='comment()')
         span {{data.tally.comments}}
-
-    div.lv-sharing
-        span.uv-icon.lv-share.sh-facebook(ng-click='share("facebook")')
-        span.uv-icon.lv-share.sh-twitter(ng-click='share("twitter")')
-        span.uv-icon.lv-share.sh-google-plus(ng-click='share("google-plus")')
-        span.uv-icon.lv-share.sh-email(ng-click='share("email")')
