@@ -8,10 +8,10 @@ article.lv-article
 
     div.lv-actions
         span.ic-upvote(ng-click='vote(true)')
-        span {{data.tally}}
+        span {{data.tally.votes}}
         span.ic-downvote(ng-click='vote(false)')
         span.ic-comment(ng-click='comment()')
-        span {{data.comments.length}}
+        span {{data.tally.comments}}
 
     div.lv-share
         span.sh-facebook(ng-click='share("facebook")')

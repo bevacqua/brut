@@ -15,15 +15,15 @@
                 templateUrl: 'listview/article.html',
                 link: function (scope) {
 
-                    $scope.vote = function (up) {
+                    scope.vote = function (up) {
                         $log.log('vote!', up);
                     };
 
-                    $scope.share = function (target) {
+                    scope.share = function (target) {
                         $log.log('share!', target);
                     };
 
-                    $scope.comment = function () {
+                    scope.comment = function () {
                         $log.log('comment!');
                     };
                 }
