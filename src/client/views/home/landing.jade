@@ -6,5 +6,4 @@ block content
             span B!
 
         section(ng-controller='lv-controller')
-            span {{a}}
-            lv-article(ng-repeat='article in articles', ng-model='article')
+            lv-article(ng-repeat='article in articles', data='article')

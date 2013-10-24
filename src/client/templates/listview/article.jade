@@ -1,17 +1,17 @@
 article.lv-article
     header.lv-header
-        p {{heading}}
+        p {{data.heading}}
 
     figure.lv-figure
-        img(ng-src='{{figure}}')
-        figcaption {{caption}}
+        img(ng-src='{{data.figure}}', alt='')
+        figcaption {{data.caption}}
 
     div.lv-actions
-        span.ic-upvote(ng-click='vote(1)')
-        span {{tally}}
-        span.ic-downvote(ng-click='vote(-1)')
+        span.ic-upvote(ng-click='vote(true)')
+        span {{data.tally}}
+        span.ic-downvote(ng-click='vote(false)')
         span.ic-comment(ng-click='comment()')
-        span {{comments.length}}
+        span {{data.comments.length}}
 
     div.lv-share
         span.sh-facebook(ng-click='share("facebook")')

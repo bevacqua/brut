@@ -3,18 +3,29 @@
 
     var module = angular.module('brut');
 
-    console.log('foo');
-
-    module.directive('lv-article', [
+    module.directive('lvArticle', [
         '$log',
         function ($log) {
-            $log.log('registering..');
             return {
                 restrict: 'E',
-                scope: true,
-                templateUrl: 'listview/lv-article',
-                link: function (scope, element) {
-                    $log.log('lva', scope, element);
+                replace: true,
+                scope: {
+                    data: '='
+                },
+                templateUrl: 'listview/article.html',
+                link: function (scope) {
+
+                    $scope.vote = function (up) {
+                        $log.log('vote!', up);
+                    };
+
+                    $scope.share = function (target) {
+                        $log.log('share!', target);
+                    };
+
+                    $scope.comment = function () {
+                        $log.log('comment!');
+                    };
                 }
             };
         }
