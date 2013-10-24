@@ -18,6 +18,7 @@
   "indent": 4,
   "browser": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "console": false
   }
 }

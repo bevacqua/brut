@@ -5,5 +5,6 @@ block content
         div
             span B!
 
-        section(ng-controller='listviewCtrl')
-            lv-article(ng-repeat='article in articles')
+        section(ng-controller='lv-controller')
+            span {{a}}
+            lv-article(ng-repeat='article in articles', ng-model='article')
