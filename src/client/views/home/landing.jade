@@ -1,0 +1,29 @@
+extends /layout
+
+block content
+    main
+        div Nice unboxing skills!
+
+        section
+            article.lv-article
+                header.lv-header
+                    p {{comment}}
+
+                figure.lv-figure
+                    img(src='https://fbstatic-a.akamaihd.net/rsrc.php/v2/y4/r/-PAXP-deijE.gif')
+                    figcaption {{caption}}
+
+                div.lv-actions
+                    span.ic-upvote(ng-click='vote(1)')
+                    span {{tally}}
+                    span.ic-downvote(ng-click='vote(-1)')
+                    span.ic-comment(ng-click='comment()')
+                    span {{comments.length}}
+
+                div.lv-share
+                    span.sh-facebook(ng-click='share("facebook")')
+                    span.sh-twitter(ng-click='share("twitter")')
+                    span.sh-google-plus(ng-click='share("google-plus")')
+                    span.sh-pinterest(ng-click='share("pinterest")')
+                    span.sh-pocket(ng-click='share("pocket")')
+                    span.sh-email(ng-click='share("email")')

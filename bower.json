@@ -1,0 +1,16 @@
+{
+  "name": "unbox",
+  "description": "Unbox a node application with a well-designed build-oriented approach in minutes",
+  "homepage": "https://github.com/bevacqua/unbox",
+  "author": {
+    "name": "Nicolas Bevacqua",
+    "email": "ng@bevacqua.io",
+    "url": "http://bevacqua.io"
+  },
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "2.1.3",
+    "angular": "1.2.0-rc.3"
+  }
+}
