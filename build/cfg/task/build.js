@@ -49,7 +49,7 @@ module.exports = {
     },
     copy: _.assign(assets.img.copy, assets.js.copy, assets.other.copy),
     sprite: {
-        icons: assets.img.sprite('icons', 'ic')
+        social: assets.img.sprite('social', 'sh')
     },
     ngtemplates: {
         app: assets.js.ng('brut')
