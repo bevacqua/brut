@@ -8,6 +8,6 @@ if (profiled) {
 function profiler () {
     require('nodetime').profile({
         accountKey: conf('NODETIME_ACCOUNT_KEY'),
-        appName: 'unbox'
+        appName: 'ponybar'
     });
 }
