@@ -2,15 +2,14 @@
 
 var controller = module.exports = require('../Controller.js')();
 
-controller.registerRoutes = function(app){
-    app.get('/code', controller.getCode);
-    app.get('/source', controller.getSource);
+controller.registerRoutes = function (app) {
+    app.get('/about', controller.to('http://bevacqua.io/about'));
+    app.get('/code', controller.to('https://github.com/bevacqua'));
+    app.get('/source', controller.to('https://github.com/bevacqua/ponybar'));
 };
 
-controller.getCode = function(req, res){
-    res.redirect('https://github.com/bevacqua');
-};
-
-controller.getSource = function(req, res){
-    res.redirect('https://github.com/bevacqua/io');
+controller.to = function (url) {
+    return function (req, res) {
+        res.redirect(url);
+    };
 };

@@ -15,20 +15,18 @@ function ViewController(name){
 
 util.inherits(ViewController, Controller);
 
-ViewController.prototype.renderView = function(res, view){
+ViewController.prototype.renderView = function(req, res, view){
+    var controller = this;
     var file = path.join(viewBase, this.name, view);
 
-    fs.readFile(file, function(err, data){
-        res.set('Content-Type', 'text/html');
-        res.end(data);
-    });
+    controller.file(req, res, file, 'text/html');
 };
 
-ViewController.prototype.getView = function(view){
+ViewController.prototype.view = function(view){
     var controller = this;
 
     return function (req, res) {
-        controller.renderView(res, view + '.html');
+        controller.renderView(req, res, view + '.html');
     };
 };
 

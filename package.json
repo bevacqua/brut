@@ -1,7 +1,7 @@
 {
-  "name": "unbox",
-  "description": "Unbox a node application with a well-designed build-oriented approach in minutes",
-  "homepage": "https://github.com/bevacqua/unbox",
+  "name": "ponybar",
+  "description": "",
+  "homepage": "https://github.com/bevacqua/ponybar",
   "author": {
     "name": "Nicolas Bevacqua",
     "email": "ng@bevacqua.io",
